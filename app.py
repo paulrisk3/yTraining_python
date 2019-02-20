@@ -5,6 +5,10 @@ from flask import Flask, render_template
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+# records = csv.reader(open("data/yTraining_Fall2018.csv", "rt"), delimiter=",")
+# for row in records:
+#     print(row)
+
 @app.route("/", methods=['GET'])
 def get():
     return 'Ok'
@@ -26,7 +30,3 @@ def get_person_training(net_id, training_name):
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3003)
-
-# records = csv.reader(open("data/yTraining_Fall2018.csv", "rt"), delimiter=",")
-# for row in records:
-#     print(row)
